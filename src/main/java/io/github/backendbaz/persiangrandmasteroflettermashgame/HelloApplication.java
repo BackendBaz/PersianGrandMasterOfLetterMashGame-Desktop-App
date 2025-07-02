@@ -1,0 +1,29 @@
+package io.github.backendbaz.persiangrandmasteroflettermashgame;
+
+import io.github.backendbaz.persiangrandmasteroflettermashgame.components.MainPageComponent;
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.stage.Stage;
+
+public class HelloApplication extends Application {
+
+    @Override
+    public void start(Stage stage) {
+        // call the component of this page:
+        var component = new MainPageComponent();
+        // set the root layout:
+        Scene scene = new Scene(component.getRoot(), component.WIDTH,
+                component.HEIGHT);
+        // set the title of page:
+        stage.setTitle("Persian Grandmaster of Letter Mash game (v1.0.0)");
+        // set the scene:
+        stage.setScene(scene);
+        // show the page:
+        stage.show();
+    }
+
+    public static void main(String[] args) {
+        launch();
+    }
+
+}
