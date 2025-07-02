@@ -18,6 +18,9 @@ public class HelloApplication extends Application {
         stage.setTitle("Persian Grandmaster of Letter Mash game (v1.0.0)");
         // set the scene:
         stage.setScene(scene);
+        // set a min value for width and height:
+        stage.setMinHeight(component.HEIGHT);
+        stage.setMinWidth(component.WIDTH);
         // show the page:
         stage.show();
     }
