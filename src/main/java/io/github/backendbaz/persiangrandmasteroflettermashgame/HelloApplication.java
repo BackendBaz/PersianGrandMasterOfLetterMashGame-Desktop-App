@@ -14,7 +14,7 @@ public class HelloApplication extends Application {
         // set the root layout:
         var rootLayout = component.getRoot();
         rootLayout.getChildren().addAll(
-                component.getMenuBar() // import a Menu Bar
+                component.getMenuBar(rootLayout) // import a Menu Bar
         );
         Scene scene = new Scene(rootLayout, component.WIDTH,
                 component.HEIGHT);

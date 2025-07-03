@@ -1,0 +1,62 @@
+/**
+*
+*	Name:			IRANSansX Fonts
+*	Version:			3
+*	Author:			Moslem Ebrahimi (moslemebrahimi.com)
+*	Created on:		Apr 22, 2021
+*	Updated on:		Jul 12, 2023
+*	Website:			http://fontiran.com
+*	Copyright:		Commercial/Proprietary Software
+--------------------------------------------------------------------------------------
+فونتایران سنس Xا یک نرم افزار مالکیتی محسوب می شود. جهت آگاهی از قوانین استفاده از این فونت ها لطفا به وب سایت (فونت ایران دات کام) مراجعه نمایید
+--------------------------------------------------------------------------------------
+IRANSansX fonts are considered a proprietary software. To gain information about the laws regarding the use of these fonts, please visit www.fontiran.com 
+--------------------------------------------------------------------------------------
+This set of fonts are used in this project under the license: (.....)
+------------------------------------------------------------------------------------- fonts/-
+*	
+**/
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: bold;
+	src: url('IRANSansX-Bold.woff') format('woff'),
+	url('IRANSansX-Bold.woff2') format('woff2');
+}
+
+@font-face {
+	font-family: IRANSansX;
+	font-style: normal;
+	font-weight: normal;
+	src: url('IRANSansX-Regular.woff') format('woff'),
+	url('IRANSansX-Regular.woff2') format('woff2');
+}
+
+.btn-control-font {
+	-fx-font-family: IRANSansX;
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+}
+
+.result-text-font {
+	-fx-font-family: IRANSansX;
+	-fx-font-size: 18px;
+}
+
+.words-text-font {
+	-fx-font-family: IRANSansX;
+	-fx-font-size: 22px;
+	-fx-font-weight: bold;
+}
+
+.grid-letters-font {
+	-fx-font-family: IRANSansX;
+	-fx-font-size: 30px;
+	-fx-font-weight: bold;
+	-fx-background-color: #faf7bd;
+	-fx-border-radius: 8px;
+	-fx-border-style: dashed;
+	-fx-border-width: 2px;
+	-fx-border-color: #000000;
+}
