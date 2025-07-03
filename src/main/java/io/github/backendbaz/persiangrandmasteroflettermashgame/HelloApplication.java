@@ -12,7 +12,11 @@ public class HelloApplication extends Application {
         // call the component of this page:
         var component = new MainPageComponent();
         // set the root layout:
-        Scene scene = new Scene(component.getRoot(), component.WIDTH,
+        var rootLayout = component.getRoot();
+        rootLayout.getChildren().addAll(
+                component.getMenuBar() // import a Menu Bar
+        );
+        Scene scene = new Scene(rootLayout, component.WIDTH,
                 component.HEIGHT);
         // set the title of page:
         stage.setTitle("Persian Grandmaster of Letter Mash game (v1.0.0)");
