@@ -8,6 +8,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
@@ -22,6 +23,9 @@ public class MainPageController extends Application {
     @FXML private VBox root;
     @FXML private Label systemMessageLabel;
     @FXML private ProgressBar loadingBar;
+    @FXML private ScrollPane scrollContainer;
+    @FXML private HBox controlPanel;
+    @FXML private VBox containerOfWords;
     @FXML private TextField box_1;
     @FXML private TextField box_2;
     @FXML private TextField box_3;
@@ -63,6 +67,8 @@ public class MainPageController extends Application {
         ));
         // set up autofocus event for all textFields:
         setupAutoFocus();
+        // prepare items to search:
+        prepareOrReset(false);
     }
 
     @FXML
@@ -142,6 +148,16 @@ public class MainPageController extends Application {
 
     private boolean isPersianLetter(String letter) {
         return "ضصثقفغعهخحجچشسیبلاتنمکگپظطزژرذدو".contains(letter);
+    }
+
+    // show or hide items to search:
+    private void prepareOrReset(boolean status) {
+        scrollContainer.setVisible(false);
+        systemMessageLabel.setVisible(false);
+        loadingBar.setVisible(status);
+        for (var box : boxes) box.setDisable(status);
+        for (var button : controlPanel.getChildren())
+            button.setDisable(status);
     }
 
     @Override
