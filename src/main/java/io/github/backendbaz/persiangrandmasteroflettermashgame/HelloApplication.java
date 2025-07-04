@@ -2,32 +2,37 @@ package io.github.backendbaz.persiangrandmasteroflettermashgame;
 
 import io.github.backendbaz.persiangrandmasteroflettermashgame.components.MainPageComponent;
 import javafx.application.Application;
+import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
+
+import java.io.IOException;
 import java.util.Objects;
 
 public class HelloApplication extends Application {
 
+    public final double WIDTH = 800;
+    public final double HEIGHT = 550;
+
     @Override
-    public void start(Stage stage) {
+    public void start(Stage stage) throws IOException {
         // call the component of this page:
-        var component = new MainPageComponent();
-        Scene scene = new Scene(component.getRoot(), component.WIDTH,
-                component.HEIGHT);
-        // import the CSS of font:
-        scene.getStylesheets().add(Objects.requireNonNull(getClass()
-                .getResource("/fonts/fontiran.css")).toExternalForm());
+        // var component = new MainPageComponent();
+        // load the FXML file:
+        var fXMLFile = new FXMLLoader(HelloApplication.class
+                .getResource("main-page.fxml"));
+        Scene scene = new Scene(fXMLFile.load(), WIDTH, HEIGHT);
         // import the icon of main page:
-        stage.getIcons().add(new Image(Objects.requireNonNull(
-                HelloApplication.class.getResourceAsStream("/images/icon.png"))));
+        stage.getIcons().add(new Image(Objects.requireNonNull(HelloApplication
+                .class.getResourceAsStream("/images/icon.png"))));
         // set the title of page:
         stage.setTitle("Persian Grandmaster of Letter Mash game (v1.0.0)");
         // set the scene:
         stage.setScene(scene);
         // set a min value for width and height:
-        stage.setMinHeight(component.HEIGHT);
-        stage.setMinWidth(component.WIDTH);
+        stage.setMinHeight(HEIGHT);
+        stage.setMinWidth(WIDTH);
         // show the page:
         stage.show();
     }

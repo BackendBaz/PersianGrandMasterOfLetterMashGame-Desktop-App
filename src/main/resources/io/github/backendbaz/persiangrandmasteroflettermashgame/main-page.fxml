@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox fx:id="root" alignment="TOP_CENTER" stylesheets="@../../../../fonts/fontiran.css"
+      xmlns="http://javafx.com/javafx/17.0.12"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="io.github.backendbaz.persiangrandmasteroflettermashgame.controllers.MainPageController">
+    <MenuBar>
+        <Menu text="Information">
+            <MenuItem text="Developer" onAction="#showDeveloperPageOnClick" />
+        </Menu>
+    </MenuBar>
+    <Label styleClass="result-text-font" text="متن پیام سیستم" textAlignment="CENTER" textFill="red" visible="false" />
+    <Separator />
+    <HBox alignment="CENTER">
+        <VBox>
+            <GridPane alignment="TOP_CENTER" blendMode="DARKEN" hgap="10"
+                      maxWidth="-Infinity" vgap="10">
+                <columnConstraints>
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="30" prefWidth="80" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="30" prefWidth="80" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="30" prefWidth="80" />
+                    <ColumnConstraints hgrow="ALWAYS" minWidth="30" prefWidth="80" />
+                </columnConstraints>
+                <rowConstraints>
+                    <RowConstraints minHeight="30" prefHeight="80" vgrow="ALWAYS" />
+                    <RowConstraints minHeight="30" prefHeight="80" vgrow="ALWAYS" />
+                    <RowConstraints minHeight="30" prefHeight="80" vgrow="ALWAYS" />
+                    <RowConstraints minHeight="30" prefHeight="80" vgrow="ALWAYS" />
+                </rowConstraints>
+                <TextField fx:id="box_1" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="1" styleClass="grid-letters-font" />
+                <TextField fx:id="box_2" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="2" styleClass="grid-letters-font" GridPane.columnIndex="1" />
+                <TextField fx:id="box_3" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="3" styleClass="grid-letters-font" GridPane.columnIndex="2" />
+                <TextField fx:id="box_4" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="4" styleClass="grid-letters-font" GridPane.columnIndex="3" />
+                <TextField fx:id="box_5" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="5" styleClass="grid-letters-font" GridPane.rowIndex="1" />
+                <TextField fx:id="box_6" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="6" styleClass="grid-letters-font" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                <TextField fx:id="box_7" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="7" styleClass="grid-letters-font" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+                <TextField fx:id="box_8" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="8" styleClass="grid-letters-font" GridPane.columnIndex="3" GridPane.rowIndex="1" />
+                <TextField fx:id="box_9" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="9" styleClass="grid-letters-font" GridPane.rowIndex="2" />
+                <TextField fx:id="box_10" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="10" styleClass="grid-letters-font" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                <TextField fx:id="box_11" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="11" styleClass="grid-letters-font" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+                <TextField fx:id="box_12" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="12" styleClass="grid-letters-font" GridPane.columnIndex="3" GridPane.rowIndex="2" />
+                <TextField fx:id="box_13" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="13" styleClass="grid-letters-font" GridPane.rowIndex="3" />
+                <TextField fx:id="box_14" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="14" styleClass="grid-letters-font" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                <TextField fx:id="box_15" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="15" styleClass="grid-letters-font" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+                <TextField fx:id="box_16" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="16" styleClass="grid-letters-font" GridPane.columnIndex="3" GridPane.rowIndex="3" />
+            </GridPane>
+            <HBox alignment="CENTER" spacing="6.0">
+                <Button mnemonicParsing="false" styleClass="btn-control-font" text="جستجو" textAlignment="CENTER">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <Button mnemonicParsing="false" styleClass="btn-control-font" text="پاکسازی">
+                    <cursor>
+                        <Cursor fx:constant="HAND" />
+                    </cursor>
+                </Button>
+                <ComboBox promptText="همه" styleClass="btn-control-font" />
+            </HBox>
+        </VBox>
+    </HBox>
+</VBox>
