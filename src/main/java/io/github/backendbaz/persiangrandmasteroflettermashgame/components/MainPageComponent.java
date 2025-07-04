@@ -2,6 +2,7 @@ package io.github.backendbaz.persiangrandmasteroflettermashgame.components;
 
 import io.github.backendbaz.persiangrandmasteroflettermashgame.HelloApplication;
 import javafx.application.Application;
+import javafx.geometry.Orientation;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -23,9 +24,11 @@ public class MainPageComponent extends Application {
         var root = new VBox();
         // set the 'alignment' property:
         root.setAlignment(Pos.TOP_CENTER);
+        // add all children:
         root.getChildren().addAll(
                 getMenuBar(root), // import a Menu Bar
-                systemMessageLabel // import a System Message Label
+                systemMessageLabel, // import a System Message Label
+                getSeparator(false) // import a horizontal separator
         );
         return root;
     }
@@ -101,6 +104,12 @@ public class MainPageComponent extends Application {
         label.setWrapText(true);
         label.setVisible(false);
         return label;
+    }
+
+    private Separator getSeparator(boolean isVertical) {
+        var separator = new Separator();
+        if (isVertical) separator.setOrientation(Orientation.VERTICAL);
+        return separator;
     }
 
     @Override
