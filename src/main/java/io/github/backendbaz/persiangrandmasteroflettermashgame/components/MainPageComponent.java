@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
+import javafx.scene.paint.Paint;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -16,15 +17,20 @@ public class MainPageComponent extends Application {
 
     public final double WIDTH = 800;
     public final double HEIGHT = 550;
+    private final Label systemMessageLabel = getSystemMessageLabel();
 
     public VBox getRoot() {
         var root = new VBox();
         // set the 'alignment' property:
         root.setAlignment(Pos.TOP_CENTER);
+        root.getChildren().addAll(
+                getMenuBar(root), // import a Menu Bar
+                systemMessageLabel // import a System Message Label
+        );
         return root;
     }
 
-    public MenuBar getMenuBar(VBox root) {
+    private MenuBar getMenuBar(VBox root) {
         var menuItem = new MenuItem();
         menuItem.setText("Developer");
         menuItem.setOnAction(event ->
@@ -84,6 +90,17 @@ public class MainPageComponent extends Application {
         hyperLink.setOnAction(event -> getHostServices()
                 .showDocument(url));
         return hyperLink;
+    }
+
+    private Label getSystemMessageLabel() {
+        var label = new Label();
+        label.getStyleClass().add("result-text-font");
+        label.setText("");
+        label.setTextFill(Paint.valueOf("red"));
+        label.setTextAlignment(TextAlignment.CENTER);
+        label.setWrapText(true);
+        label.setVisible(false);
+        return label;
     }
 
     @Override

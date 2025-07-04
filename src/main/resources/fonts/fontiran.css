@@ -41,7 +41,8 @@ This set of fonts are used in this project under the license: (.....)
 
 .result-text-font {
 	-fx-font-family: IRANSansX;
-	-fx-font-size: 18px;
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
 }
 
 .words-text-font {
