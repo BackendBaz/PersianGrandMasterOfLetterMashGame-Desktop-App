@@ -11,7 +11,7 @@ import java.util.Objects;
 public class HelloApplication extends Application {
 
     public final double WIDTH = 800;
-    public final double HEIGHT = 550;
+    public final double HEIGHT = 600;
 
     @Override
     public void start(Stage stage) throws IOException {
@@ -29,6 +29,8 @@ public class HelloApplication extends Application {
         // set a min value for width and height:
         stage.setMinHeight(HEIGHT);
         stage.setMinWidth(WIDTH);
+        // disable the resizable:
+        stage.setResizable(false);
         // show the page:
         stage.show();
     }

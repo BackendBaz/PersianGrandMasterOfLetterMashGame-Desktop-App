@@ -11,10 +11,10 @@
             <MenuItem onAction="#showDeveloperPageOnClick" text="Developer" />
         </Menu>
     </MenuBar>
-    <Label fx:id="systemMessageLabel" styleClass="result-text-font" text="متن تست برای مشاهده!" textAlignment="CENTER" textFill="red" wrapText="true" />
+    <Label fx:id="systemMessageLabel" styleClass="result-text-font" textAlignment="CENTER" textFill="red" wrapText="true" visible="false" />
     <Separator />
     <HBox alignment="CENTER">
-        <VBox alignment="CENTER">
+        <VBox alignment="TOP_CENTER" spacing="10.0">
             <GridPane alignment="TOP_CENTER" hgap="10" maxWidth="-Infinity" vgap="10">
                 <columnConstraints>
                     <ColumnConstraints hgrow="ALWAYS" minWidth="30" prefWidth="80" />
@@ -58,12 +58,12 @@
                 </Button>
                 <ComboBox fx:id="pointComboBox" promptText="همه" styleClass="btn-control-font" />
             </HBox>
-            <ProgressBar fx:id="loadingBar" />
+            <ProgressBar fx:id="loadingBar" visible="false" />
         </VBox>
         <Separator orientation="VERTICAL" />
         <VBox>
             <ScrollPane fx:id="scrollContainer" fitToWidth="true" minWidth="400.0" styleClass="remove-border-bg" visible="false">
-                <VBox fx:id="containerOfWords" alignment="CENTER" />
+                <VBox fx:id="containerOfWords" alignment="CENTER" spacing="10.0" />
             </ScrollPane>
         </VBox>
     </HBox>
