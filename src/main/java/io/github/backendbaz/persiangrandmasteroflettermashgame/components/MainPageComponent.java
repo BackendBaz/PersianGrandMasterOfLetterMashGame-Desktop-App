@@ -175,8 +175,14 @@ public class MainPageComponent extends Application {
         btnSearch.setText("جستجو");
         btnSearch.getStyleClass().add("btn-control-font");
         btnSearch.setTextAlignment(TextAlignment.CENTER);
+        // clear btn:
+        var btnClear = new Button();
+        btnClear.setText("پاکسازی");
+        btnClear.getStyleClass().add("btn-control-font");
+        btnClear.setTextAlignment(TextAlignment.CENTER);
         hBox.getChildren().addAll(
-                btnSearch // import a search button
+                btnSearch, // import a search button
+                btnClear // import a clear button
         );
         return hBox;
     }
