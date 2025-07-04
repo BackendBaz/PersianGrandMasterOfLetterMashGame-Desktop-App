@@ -7,8 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
-import javafx.scene.layout.HBox;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.*;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
@@ -117,7 +116,51 @@ public class MainPageComponent extends Application {
     private HBox getHBox() {
         var hBox = new HBox();
         hBox.setAlignment(Pos.CENTER);
+        hBox.getChildren().addAll(
+                getBoardContainer() // import a board container
+        );
         return hBox;
+    }
+
+    private VBox getBoardContainer() {
+        var vBox = new VBox();
+        vBox.getChildren().addAll(
+                get4x4GridPane() // import a 4x4 grid with 16 text fields
+        );
+        return vBox;
+    }
+
+    private GridPane get4x4GridPane() {
+        var grid = new GridPane();
+        for (int i = 0; i < 4; i++) {
+            var colsContainer = new ColumnConstraints();
+            colsContainer.setHgrow(Priority.ALWAYS);
+            colsContainer.setMinWidth(30);
+            colsContainer.setPrefWidth(80);
+            grid.getColumnConstraints().add(colsContainer);
+        }
+        for (int i = 0; i < 4; i++) {
+            var rowsContainer = new RowConstraints();
+            rowsContainer.setVgrow(Priority.ALWAYS);
+            rowsContainer.setMinHeight(30);
+            rowsContainer.setPrefHeight(80);
+            grid.getRowConstraints().add(rowsContainer);
+        }
+        for (int row = 0; row < 4; row++)
+            for (int col = 0; col < 4; col++) {
+                var textField = new TextField();
+                textField.setAlignment(Pos.CENTER);
+                textField.setPromptText(String.valueOf(10));
+                textField.getStyleClass().add("grid-letters-font");
+                textField.setMaxWidth(1.7976931348623157E308);
+                textField.setMaxHeight(1.7976931348623157E308);
+                GridPane.setRowIndex(textField, row);
+                GridPane.setColumnIndex(textField, col);
+                grid.getChildren().add(textField);
+            }
+        grid.setHgap(10);
+        grid.setVgap(10);
+        return grid;
     }
 
     @Override
