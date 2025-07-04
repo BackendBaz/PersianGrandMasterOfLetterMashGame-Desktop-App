@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import java.net.*?>
 <?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="root" alignment="TOP_CENTER" stylesheets="@../../../../fonts/fontiran.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.backendbaz.persiangrandmasteroflettermashgame.controllers.MainPageController">
+<VBox fx:id="root" alignment="TOP_CENTER" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.backendbaz.persiangrandmasteroflettermashgame.controllers.MainPageController">
     <MenuBar>
         <Menu text="Information">
             <MenuItem onAction="#showDeveloperPageOnClick" text="Developer" />
@@ -45,12 +46,12 @@
                 <TextField fx:id="box_16" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" promptText="16" styleClass="grid-letters-font" GridPane.columnIndex="3" GridPane.rowIndex="3" />
             </GridPane>
             <HBox fx:id="controlPanel" alignment="CENTER" spacing="6.0">
-                <Button mnemonicParsing="false" styleClass="btn-control-font" text="جستجو" textAlignment="CENTER">
+                <Button mnemonicParsing="false" onAction="#search" styleClass="btn-control-font" text="جستجو" textAlignment="CENTER">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button onAction="#deleteAll" mnemonicParsing="false" styleClass="btn-control-font" text="پاکسازی">
+                <Button mnemonicParsing="false" onAction="#deleteAll" styleClass="btn-control-font" text="پاکسازی">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
@@ -61,11 +62,13 @@
         </VBox>
         <Separator orientation="VERTICAL" />
         <VBox>
-            <ScrollPane fx:id="scrollContainer" fitToWidth="true"
-                        minWidth="400.0" styleClass="remove-border-bg"
-                        stylesheets="@../../../../style.css" visible="false">
+            <ScrollPane fx:id="scrollContainer" fitToWidth="true" minWidth="400.0" styleClass="remove-border-bg" visible="false">
                 <VBox fx:id="containerOfWords" alignment="CENTER" />
             </ScrollPane>
         </VBox>
     </HBox>
+   <stylesheets>
+      <URL value="@../../../../fonts/fontiran.css" />
+      <URL value="@../../../../style.css" />
+   </stylesheets>
 </VBox>
