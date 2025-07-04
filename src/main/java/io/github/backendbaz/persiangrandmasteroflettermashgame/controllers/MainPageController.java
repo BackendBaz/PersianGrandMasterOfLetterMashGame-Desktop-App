@@ -42,7 +42,9 @@ public class MainPageController extends Application {
     @FXML private TextField box_14;
     @FXML private TextField box_15;
     @FXML private TextField box_16;
+    @FXML private ComboBox<String> pointComboBox;
     private final List<TextField> boxes = new ArrayList<>();
+    private String highScoreLetter = "همه";
 
     // It runs once when the page is starting:
     public void initialize() {
@@ -69,6 +71,14 @@ public class MainPageController extends Application {
         setupAutoFocus();
         // prepare items to search:
         prepareOrReset(false);
+        // set up pointComboBox's options:
+        String[] options = {"همه", "1", "2", "3", "4",
+                "5", "6", "7", "8", "9", "10", "11", "12", "13", "14",
+                "15", "16"};
+        pointComboBox.getItems().addAll(options);
+        pointComboBox.setOnAction(event ->
+                highScoreLetter = pointComboBox.getSelectionModel()
+                        .getSelectedItem());
     }
 
     @FXML

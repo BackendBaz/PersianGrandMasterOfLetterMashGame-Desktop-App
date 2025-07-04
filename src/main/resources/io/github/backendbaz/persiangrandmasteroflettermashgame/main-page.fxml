@@ -55,7 +55,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <ComboBox promptText="همه" styleClass="btn-control-font" />
+                <ComboBox fx:id="pointComboBox" promptText="همه" styleClass="btn-control-font" />
             </HBox>
             <ProgressBar fx:id="loadingBar" />
         </VBox>
