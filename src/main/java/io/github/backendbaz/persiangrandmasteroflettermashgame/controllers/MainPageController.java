@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Hyperlink;
 import javafx.scene.control.Label;
+import javafx.scene.control.ProgressBar;
 import javafx.scene.control.Separator;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
@@ -18,6 +19,8 @@ import java.util.Objects;
 public class MainPageController extends Application {
 
     @FXML private VBox root;
+    @FXML private Label systemMessageLabel;
+    @FXML private ProgressBar loadingBar;
 
     // It runs once when the page is starting:
     public void initialize() {}
@@ -39,8 +42,7 @@ public class MainPageController extends Application {
                 .getResource("/fonts/fontiran.css")).toExternalForm());
         vBox.getChildren().add(textsInShowDeveloperPage("امیرحسین عمادی"));
         vBox.getChildren().add(textsInShowDeveloperPage("Amirhossein Emadi"));
-        var sep = new Separator();
-        vBox.getChildren().add(sep);
+        vBox.getChildren().add(new Separator());
         vBox.getChildren().add(linksInShowDeveloperPage("GitHub",
                 "https://github.com/BackendBaz"));
         vBox.getChildren().add(linksInShowDeveloperPage("Telegram",

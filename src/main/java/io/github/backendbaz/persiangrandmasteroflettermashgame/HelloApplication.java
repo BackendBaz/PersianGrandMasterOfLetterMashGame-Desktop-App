@@ -1,12 +1,10 @@
 package io.github.backendbaz.persiangrandmasteroflettermashgame;
 
-import io.github.backendbaz.persiangrandmasteroflettermashgame.components.MainPageComponent;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -17,8 +15,6 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage stage) throws IOException {
-        // call the component of this page:
-        // var component = new MainPageComponent();
         // load the FXML file:
         var fXMLFile = new FXMLLoader(HelloApplication.class
                 .getResource("main-page.fxml"));

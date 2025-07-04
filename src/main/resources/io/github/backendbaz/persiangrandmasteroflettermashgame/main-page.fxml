@@ -4,21 +4,17 @@
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
-<VBox fx:id="root" alignment="TOP_CENTER" stylesheets="@../../../../fonts/fontiran.css"
-      xmlns="http://javafx.com/javafx/17.0.12"
-      xmlns:fx="http://javafx.com/fxml/1"
-      fx:controller="io.github.backendbaz.persiangrandmasteroflettermashgame.controllers.MainPageController">
+<VBox fx:id="root" alignment="TOP_CENTER" stylesheets="@../../../../fonts/fontiran.css" xmlns="http://javafx.com/javafx/17.0.12" xmlns:fx="http://javafx.com/fxml/1" fx:controller="io.github.backendbaz.persiangrandmasteroflettermashgame.controllers.MainPageController">
     <MenuBar>
         <Menu text="Information">
-            <MenuItem text="Developer" onAction="#showDeveloperPageOnClick" />
+            <MenuItem onAction="#showDeveloperPageOnClick" text="Developer" />
         </Menu>
     </MenuBar>
-    <Label styleClass="result-text-font" text="متن پیام سیستم" textAlignment="CENTER" textFill="red" visible="false" />
+    <Label fx:id="systemMessageLabel" styleClass="result-text-font" text="متن تست برای مشاهده!" textAlignment="CENTER" textFill="red" wrapText="true" />
     <Separator />
     <HBox alignment="CENTER">
-        <VBox>
-            <GridPane alignment="TOP_CENTER" blendMode="DARKEN" hgap="10"
-                      maxWidth="-Infinity" vgap="10">
+        <VBox alignment="CENTER">
+            <GridPane alignment="TOP_CENTER" hgap="10" maxWidth="-Infinity" vgap="10">
                 <columnConstraints>
                     <ColumnConstraints hgrow="ALWAYS" minWidth="30" prefWidth="80" />
                     <ColumnConstraints hgrow="ALWAYS" minWidth="30" prefWidth="80" />
@@ -61,6 +57,13 @@
                 </Button>
                 <ComboBox promptText="همه" styleClass="btn-control-font" />
             </HBox>
+            <ProgressBar fx:id="loadingBar" />
+        </VBox>
+        <Separator orientation="VERTICAL" />
+        <VBox>
+            <ScrollPane fx:id="scrollContainer" fitToWidth="true" minWidth="400.0" styleClass="remove-border-bg" stylesheets="@../../../../style.css">
+                <VBox fx:id="containerOfWords" alignment="CENTER" />
+            </ScrollPane>
         </VBox>
     </HBox>
 </VBox>

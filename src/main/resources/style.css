@@ -1,0 +1,16 @@
+.bg-of-words {
+    -fx-background-color: #dbfbb0;
+    -fx-border-radius: 8px;
+    -fx-border-style: solid;
+    -fx-border-width: 1px;
+    -fx-border-color: #284b00;
+}
+
+.bg-of-words-path {
+    -fx-background-color: #bffbf5;
+}
+
+.remove-border-bg, .remove-border-bg:focused {
+    -fx-border-style: none;
+    -fx-background-color: transparent;
+}
