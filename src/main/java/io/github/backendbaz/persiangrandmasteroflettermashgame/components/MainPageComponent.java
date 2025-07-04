@@ -125,7 +125,8 @@ public class MainPageComponent extends Application {
     private VBox getBoardContainer() {
         var vBox = new VBox();
         vBox.getChildren().addAll(
-                get4x4GridPane() // import a 4x4 grid with 16 text fields
+                get4x4GridPane(), // import a 4x4 grid with 16 text fields
+                getControlPanel() // import 3 buttons to control the app
         );
         return vBox;
     }
@@ -160,7 +161,24 @@ public class MainPageComponent extends Application {
             }
         grid.setHgap(10);
         grid.setVgap(10);
+        grid.setAlignment(Pos.TOP_CENTER);
+        grid.setMaxWidth(Double.NEGATIVE_INFINITY);
         return grid;
+    }
+
+    private HBox getControlPanel() {
+        var hBox = new HBox();
+        hBox.setAlignment(Pos.CENTER);
+        hBox.setSpacing(6);
+        // search btn:
+        var btnSearch = new Button();
+        btnSearch.setText("جستجو");
+        btnSearch.getStyleClass().add("btn-control-font");
+        btnSearch.setTextAlignment(TextAlignment.CENTER);
+        hBox.getChildren().addAll(
+                btnSearch // import a search button
+        );
+        return hBox;
     }
 
     @Override
