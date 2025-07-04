@@ -162,12 +162,26 @@ public class MainPageController extends Application {
 
     // show or hide items to search:
     private void prepareOrReset(boolean status) {
-        scrollContainer.setVisible(false);
-        systemMessageLabel.setVisible(false);
+        visibilityOfSearch(false);
         loadingBar.setVisible(status);
         for (var box : boxes) box.setDisable(status);
         for (var button : controlPanel.getChildren())
             button.setDisable(status);
+    }
+
+    private void visibilityOfSearch(boolean status) {
+        scrollContainer.setVisible(status);
+        systemMessageLabel.setVisible(status);
+    }
+
+    @FXML
+    private void deleteAll() {
+        visibilityOfSearch(false);
+        for (var box : boxes) box.setText("");
+        Platform.runLater(() -> {
+            boxes.getFirst().requestFocus();
+            boxes.getFirst().selectAll();
+        });
     }
 
     @Override

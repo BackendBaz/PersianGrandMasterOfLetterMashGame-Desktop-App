@@ -50,7 +50,7 @@
                         <Cursor fx:constant="HAND" />
                     </cursor>
                 </Button>
-                <Button mnemonicParsing="false" styleClass="btn-control-font" text="پاکسازی">
+                <Button onAction="#deleteAll" mnemonicParsing="false" styleClass="btn-control-font" text="پاکسازی">
                     <cursor>
                         <Cursor fx:constant="HAND" />
                     </cursor>
