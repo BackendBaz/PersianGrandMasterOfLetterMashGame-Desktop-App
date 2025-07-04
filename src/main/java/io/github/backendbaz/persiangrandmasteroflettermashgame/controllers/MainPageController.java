@@ -2,18 +2,19 @@ package io.github.backendbaz.persiangrandmasteroflettermashgame.controllers;
 
 import io.github.backendbaz.persiangrandmasteroflettermashgame.HelloApplication;
 import javafx.application.Application;
+import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Hyperlink;
-import javafx.scene.control.Label;
-import javafx.scene.control.ProgressBar;
-import javafx.scene.control.Separator;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.TextAlignment;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
 public class MainPageController extends Application {
@@ -21,9 +22,48 @@ public class MainPageController extends Application {
     @FXML private VBox root;
     @FXML private Label systemMessageLabel;
     @FXML private ProgressBar loadingBar;
+    @FXML private TextField box_1;
+    @FXML private TextField box_2;
+    @FXML private TextField box_3;
+    @FXML private TextField box_4;
+    @FXML private TextField box_5;
+    @FXML private TextField box_6;
+    @FXML private TextField box_7;
+    @FXML private TextField box_8;
+    @FXML private TextField box_9;
+    @FXML private TextField box_10;
+    @FXML private TextField box_11;
+    @FXML private TextField box_12;
+    @FXML private TextField box_13;
+    @FXML private TextField box_14;
+    @FXML private TextField box_15;
+    @FXML private TextField box_16;
+    private final List<TextField> boxes = new ArrayList<>();
 
     // It runs once when the page is starting:
-    public void initialize() {}
+    public void initialize() {
+        // define a list of textFields:
+        boxes.addAll(List.of(
+                box_1,
+                box_2,
+                box_3,
+                box_4,
+                box_5,
+                box_6,
+                box_7,
+                box_8,
+                box_9,
+                box_10,
+                box_11,
+                box_12,
+                box_13,
+                box_14,
+                box_15,
+                box_16
+        ));
+        // set up autofocus event for all textFields:
+        setupAutoFocus();
+    }
 
     @FXML
     private void showDeveloperPageOnClick() {
@@ -72,6 +112,36 @@ public class MainPageController extends Application {
         hyperLink.setOnAction(event -> getHostServices()
                 .showDocument(url));
         return hyperLink;
+    }
+
+    private void setupAutoFocus() {
+        for (var i = 0; i < boxes.size(); i++) {
+            TextField current = boxes.get(i);
+            int finalI = i;
+            current.setOnKeyTyped(event -> {
+                var letter = event.getCharacter();
+                if (isPersianLetter(letter)) {
+                    current.setText(letter);
+                    if (finalI < boxes.size() - 1) {
+                        Platform.runLater(() -> {
+                            boxes.get(finalI + 1).requestFocus();
+                            boxes.get(finalI + 1).selectAll();
+                        });
+                        return;
+                    }
+                    Platform.runLater(() -> {
+                        boxes.getFirst().requestFocus();
+                        boxes.getFirst().selectAll();
+                    });
+                    return;
+                }
+                current.setText("");
+            });
+        }
+    }
+
+    private boolean isPersianLetter(String letter) {
+        return "ضصثقفغعهخحجچشسیبلاتنمکگپظطزژرذدو".contains(letter);
     }
 
     @Override

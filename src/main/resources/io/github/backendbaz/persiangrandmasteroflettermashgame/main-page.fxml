@@ -61,7 +61,9 @@
         </VBox>
         <Separator orientation="VERTICAL" />
         <VBox>
-            <ScrollPane fx:id="scrollContainer" fitToWidth="true" minWidth="400.0" styleClass="remove-border-bg" stylesheets="@../../../../style.css">
+            <ScrollPane fx:id="scrollContainer" fitToWidth="true"
+                        minWidth="400.0" styleClass="remove-border-bg"
+                        stylesheets="@../../../../style.css" visible="false">
                 <VBox fx:id="containerOfWords" alignment="CENTER" />
             </ScrollPane>
         </VBox>
