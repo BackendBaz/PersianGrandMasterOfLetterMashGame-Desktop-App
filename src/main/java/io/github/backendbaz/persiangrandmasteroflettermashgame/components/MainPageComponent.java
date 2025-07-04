@@ -7,6 +7,7 @@ import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.image.Image;
+import javafx.scene.layout.HBox;
 import javafx.scene.layout.VBox;
 import javafx.scene.paint.Paint;
 import javafx.scene.text.TextAlignment;
@@ -28,7 +29,8 @@ public class MainPageComponent extends Application {
         root.getChildren().addAll(
                 getMenuBar(root), // import a Menu Bar
                 systemMessageLabel, // import a System Message Label
-                getSeparator(false) // import a horizontal separator
+                getSeparator(false), // import a horizontal separator
+                getHBox() // import a horizontal container
         );
         return root;
     }
@@ -110,6 +112,12 @@ public class MainPageComponent extends Application {
         var separator = new Separator();
         if (isVertical) separator.setOrientation(Orientation.VERTICAL);
         return separator;
+    }
+
+    private HBox getHBox() {
+        var hBox = new HBox();
+        hBox.setAlignment(Pos.CENTER);
+        return hBox;
     }
 
     @Override
