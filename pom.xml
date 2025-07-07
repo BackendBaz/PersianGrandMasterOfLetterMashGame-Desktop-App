@@ -6,7 +6,7 @@
 
     <groupId>io.github.backendbaz</groupId>
     <artifactId>persian-grand-master-of-letter-mash-game</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
     <name>PersianGrandMasterOfLetterMashGame-Desktop-App</name>
 
     <properties>
