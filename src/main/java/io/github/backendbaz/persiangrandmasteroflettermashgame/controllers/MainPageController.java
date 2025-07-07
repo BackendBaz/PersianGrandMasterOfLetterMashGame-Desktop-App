@@ -228,6 +228,7 @@ public class MainPageController extends Application {
         scrollContainer.setVisible(false);
         systemMessageLabel.setVisible(false);
         for (var box : boxes) box.setText("");
+        clearBgLetters();
         Platform.runLater(() -> {
             boxes.getFirst().requestFocus();
             boxes.getFirst().selectAll();
