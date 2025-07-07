@@ -49,8 +49,25 @@ public class MainPageController extends Application {
     @FXML private TextField box_14;
     @FXML private TextField box_15;
     @FXML private TextField box_16;
+    @FXML private Label badge_1;
+    @FXML private Label badge_2;
+    @FXML private Label badge_3;
+    @FXML private Label badge_4;
+    @FXML private Label badge_5;
+    @FXML private Label badge_6;
+    @FXML private Label badge_7;
+    @FXML private Label badge_8;
+    @FXML private Label badge_9;
+    @FXML private Label badge_10;
+    @FXML private Label badge_11;
+    @FXML private Label badge_12;
+    @FXML private Label badge_13;
+    @FXML private Label badge_14;
+    @FXML private Label badge_15;
+    @FXML private Label badge_16;
     @FXML private ComboBox<String> pointComboBox;
     private final List<TextField> boxes = new ArrayList<>();
+    private final List<Label> badges = new ArrayList<>();
     private String highScoreLetter = "همه";
     private CompletableFuture<Dictionary> dictionaryFuture;
 
@@ -74,6 +91,25 @@ public class MainPageController extends Application {
                 box_14,
                 box_15,
                 box_16
+        ));
+        // define a list of badges:
+        badges.addAll(List.of(
+                badge_1,
+                badge_2,
+                badge_3,
+                badge_4,
+                badge_5,
+                badge_6,
+                badge_7,
+                badge_8,
+                badge_9,
+                badge_10,
+                badge_11,
+                badge_12,
+                badge_13,
+                badge_14,
+                badge_15,
+                badge_16
         ));
         // set up autofocus event for all textFields:
         setupAutoFocus();
@@ -225,6 +261,7 @@ public class MainPageController extends Application {
     private void clearBgLetters() {
         for (var box : boxes) box.getStyleClass().removeIf(str ->
                 str.equals("bg-of-words-path"));
+        for (var badge : badges) badge.setVisible(false);
     }
 
     private void showSystemMessage(String message) {
@@ -250,11 +287,15 @@ public class MainPageController extends Application {
             hBox.setCursor(Cursor.HAND);
             hBox.setOnMouseClicked(event -> {
                 clearBgLetters();
-                for (var i = 0; i < boxes.size(); i++)
-                    for (var point : word.path())
-                        boxes.get(Finder.getCellNumberOfGrid(point.row(),
-                                        point.col(), 0))
-                                .getStyleClass().add("bg-of-words-path");
+                var counter = 0;
+                for (var point : word.path()) {
+                    var cellNumber = Finder.getCellNumberOfGrid(point.row(),
+                            point.col(), 0);
+                    boxes.get(cellNumber).getStyleClass().add("bg-of-words-path");
+                    badges.get(cellNumber).setVisible(true);
+                    counter++;
+                    badges.get(cellNumber).setText(String.valueOf(counter));
+                }
             });
             var wordLbl = new Label();
             wordLbl.getStyleClass().add("words-text-font");
