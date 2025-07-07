@@ -57,7 +57,17 @@ This set of fonts are used in this project under the license: (.....)
 	-fx-font-weight: bold;
 	-fx-background-color: #faf7bd;
 	-fx-border-radius: 8px;
+	-fx-border-style: solid;
+	-fx-border-width: 1px;
+	-fx-border-color: black
+}
+
+.badge-path {
+	-fx-font-family: IRANSansX;
+	-fx-font-size: 20px;
+	-fx-font-weight: bold;
+	-fx-border-radius: 8px;
 	-fx-border-style: dashed;
-	-fx-border-width: 2px;
-	-fx-border-color: #000000;
+	-fx-border-width: 1px;
+	-fx-border-color: black;
 }
