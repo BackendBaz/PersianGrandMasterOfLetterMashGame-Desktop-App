@@ -23,7 +23,7 @@ public class HelloApplication extends Application {
         stage.getIcons().add(new Image(Objects.requireNonNull(HelloApplication
                 .class.getResourceAsStream("/images/icon.png"))));
         // set the title of page:
-        stage.setTitle("Persian Grandmaster of Letter Mash game (v1.1.1)");
+        stage.setTitle("Persian Grandmaster of Letter Mash game (v1.1.2)");
         // set the scene:
         stage.setScene(scene);
         // set a min value for width and height:
